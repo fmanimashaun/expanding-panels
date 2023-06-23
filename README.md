@@ -1,9 +1,12 @@
 # Expanding Panels Project
+
 ## Overview
-The Expanding Panels project is a web application that showcases a set of panels with different backgrounds. When a panel is clicked, it expands to fill the entire container width, providing more information about the selected panel. This project is built using HTML, CSS, and JavaScript with the help of the Tailwind CSS framework.
+
+The Expanding Panels project is a web application that showcases a set of panels with different backgrounds. When a panel clicks, it expands to fill the entire container width, providing more information about the selected conference. This project is built using HTML, CSS, and JavaScript with the help of the Tailwind CSS framework.
 
 ## Features
-- **Interactive Panel Expansion:** Clicking on a panel triggers an event that expands the selected panel to occupy the full width of the container while the other panels shrink to their original size. This interaction provides a visually engaging experience for users.
+
+- **Interactive Panel Expansion:** Clicking on a panel triggers an event that expands the selected panel to occupy the full width of the container. In contrast, the other panels shrink to their original size. This interaction provides a visually engaging experience for users.
 
 - **Dynamic Background Images:** Each panel has a unique background image, which adds visual appeal and helps convey the theme of the content.
 
@@ -32,37 +35,40 @@ cd expanding-panels
 
 Here are some notable aspects of the project's code:
 - **Event Handling with JavaScript:** The JavaScript code utilizes event handling to respond to click events on the panels. When a panel is clicked, the `active` class is added to the clicked panel, while the `active` class is removed from the other panels.
+  
   ```javascript
+  
   const cards = document.querySelectorAll('.panel');
-const parent = document.querySelector('.jscontainer');
+  const parent = document.querySelector('.jscontainer');
 
-parent.addEventListener('click', function (e) {
+  parent.addEventListener('click', function (e) {
   cards.forEach((card) => {
     card.classList.remove('active');
   });
   e.target.classList.add('active');
 });
+
 ```
 
 - **CSS Styling with Tailwind CSS:** The project leverages the Tailwind CSS framework to style the panels and apply responsive design techniques. The utility classes Tailwind CSS provides enable concise and efficient elements styling.
+  ```bash
 
-```css
-.panel {
-  @apply flex-[100px] shadow-2xl rounded-[50px] cursor-pointer bg-cover bg-no-repeat relative;
-  transition: width 1s ease-in-out;
-}
+  .panel {
+    @apply flex-[100px] shadow-2xl rounded-[50px] cursor-pointer bg-cover bg-no-repeat relative;
+    transition: width 1s ease-in-out;
+  }
 
-.panel.active {
-  @apply flex-[100%];
-}
+  .panel.active {
+    @apply flex-[100%];
+  }
 
-.panel.active h3 {
-  @apply opacity-100 transition-opacity duration-300 ease-in delay-400;
-}
+  .panel.active h3 {
+    @apply opacity-100 transition-opacity duration-300 ease-in delay-400;
+  }
 
-.panel:not(.active) h3 {
-  @apply opacity-0 transition-opacity duration-300 ease-in delay-400;
-}
+  .panel:not(.active) h3 {
+    @apply opacity-0 transition-opacity duration-300 ease-in delay-400;
+  }
 
 ```
 
