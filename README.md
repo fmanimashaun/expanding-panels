@@ -16,7 +16,7 @@ The Expanding Panels project is a web application that showcases a set of panels
 
 ## Demo
 
-![screenshot](./src/assets/img/demo.gif)
+![screenshot](./docs/assets/img/demo.gif)
 
 ## Installation
 
